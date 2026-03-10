@@ -1,0 +1,44 @@
+# ============================================================
+# YOLOv8 Chili Disease Detection - .gitignore
+# ============================================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# --- Virtual Environments ---
+venv/
+env/
+.venv/
+fyp_env/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+Thumbs.db
+.DS_Store
+
+# --- Model Weights (large files) ---
+models/*.pt
+runs/
+
+# --- Dataset (large files) ---
+data/images/
+data/valid/
+data/labels/
+data/*.yaml
+
+# --- Logs ---
+*.log
+
+# --- Jupyter ---
+.ipynb_checkpoints/

@@ -1,0 +1,31 @@
+# ============================================================
+# YOLOv8 Chili Disease Detection - Required Dependencies
+# ============================================================
+# Python Version: 3.10.8
+# Install: pip install -r requirements.txt
+# ============================================================
+
+# --- Core ML Framework ---
+ultralytics==8.3.105            # YOLOv8 model training & inference
+torch==2.6.0                    # PyTorch deep learning backend
+torchvision==0.21.0             # PyTorch vision utilities
+
+# --- Image Processing ---
+opencv-python==4.11.0.86        # Image loading, drawing, processing
+Pillow==11.1.0                  # Image format handling (PIL)
+numpy==2.1.1                    # Array operations & computations
+
+# --- Visualization ---
+matplotlib==3.10.1              # Image display & plotting
+seaborn==0.13.2                 # Statistical visualization (training metrics)
+
+# --- Data Handling ---
+pandas==2.2.3                   # Data analysis (training metrics & logs)
+PyYAML==6.0.2                   # YAML config file parsing
+scipy==1.15.2                   # Scientific computing utilities
+
+# --- Hardware Communication ---
+pyserial==3.5                   # Serial communication with ESP32
+
+# --- Utilities ---
+tqdm==4.67.1                    # Progress bars during training

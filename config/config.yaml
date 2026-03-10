@@ -1,0 +1,44 @@
+# ============================================================
+# YOLOv8 Chili Disease Detection - Configuration
+# ============================================================
+
+# --- Model Settings ---
+model:
+  weights_path: "models/best.pt"          # Path to trained YOLOv8 weights
+  confidence_threshold: 0.6               # Minimum confidence for detections
+  image_size: 640                         # Input image size for inference
+
+# --- Detection Settings ---
+detection:
+  # Color map for bounding boxes (BGR format)
+  color_map:
+    0: [255, 0, 0]    # Class 0 (Disease) - Red
+    1: [0, 255, 0]    # Class 1 (Healthy) - Green
+  # Image quadrant boundaries (pixels)
+  quadrant:
+    x_split: 180      # Horizontal split point
+    y_split: 320      # Vertical split point
+
+# --- Serial Communication (ESP32) ---
+serial:
+  port: "COM3"                            # Serial port for ESP32
+  baud_rate: 115200                       # Baud rate
+  timeout: 2                              # Serial timeout in seconds
+  connection_delay: 2                     # Delay after opening serial (seconds)
+
+# --- Training Settings ---
+training:
+  base_model: "yolov8n.pt"               # Pretrained model to fine-tune
+  epochs: 150                             # Number of training epochs
+  image_size: 640                         # Training image size
+  project: "runs/train"                   # Training output directory
+  experiment_name: "exp"                  # Experiment name
+
+# --- Dataset Settings ---
+dataset:
+  path: "data"                            # Dataset root directory
+  train: "images"                         # Training images subfolder
+  val: "valid"                            # Validation images subfolder
+  num_classes: 1                          # Number of classes
+  class_names:
+    - "Disease"                           # Class name(s)
