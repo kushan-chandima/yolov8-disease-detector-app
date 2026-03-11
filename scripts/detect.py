@@ -329,14 +329,14 @@ if __name__ == "__main__":
     area = detector.determine_area()
     print(f"Determined Area: {area}")
 
-    # Send command to ESP32
-    if area:
-        detector.send_to_esp32(
-            area,
-            port=serial_cfg["port"],
-            baud_rate=serial_cfg["baud_rate"],
-            timeout=serial_cfg["timeout"],
-            connection_delay=serial_cfg["connection_delay"],
-        )
-    else:
-        print("No disease detected – no spray command sent.")
+    # Send command to ESP32 (uncomment when hardware is connected)
+    # if area:
+    #     detector.send_to_esp32(
+    #         area,
+    #         port=serial_cfg["port"],
+    #         baud_rate=serial_cfg["baud_rate"],
+    #         timeout=serial_cfg["timeout"],
+    #         connection_delay=serial_cfg["connection_delay"],
+    #     )
+    # else:
+    #     print("No disease detected – no spray command sent.")
