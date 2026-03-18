@@ -16,6 +16,8 @@ venv/
 env/
 .venv/
 fyp_env/
+env-chili-app/
+.streamlit/
 
 # --- IDE ---
 .vscode/

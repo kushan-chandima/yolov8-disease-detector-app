@@ -29,3 +29,6 @@ pyserial==3.5                   # Serial communication with ESP32
 
 # --- Utilities ---
 tqdm==4.67.1                    # Progress bars during training
+
+# --- Web Interface ---
+streamlit==1.55.0               # Web application framework

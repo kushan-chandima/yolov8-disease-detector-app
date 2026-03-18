@@ -100,10 +100,34 @@ class YOLODetector:
         Raises:
             ValueError: If the image cannot be read.
         """
-        self.image = cv.imread(image_path)
-        if self.image is None:
+        image = cv.imread(image_path)
+        if image is None:
             raise ValueError(f"Failed to load image: {image_path}")
+        
+        self._setup_image(image)
+        logger.info("Image loaded from disk: %s (%dx%d)", image_path,
+                    self.image.shape[1], self.image.shape[0])
 
+    def load_image_from_buffer(self, buffer: bytes) -> None:
+        """Load an image from a byte buffer (e.g. from Streamlit).
+
+        Args:
+            buffer: Byte array of the image.
+        Raises:
+            ValueError: If the buffer cannot be decoded.
+        """
+        nparr = np.frombuffer(buffer, np.uint8)
+        image = cv.imdecode(nparr, cv.IMREAD_COLOR)
+        if image is None:
+            raise ValueError("Failed to decode image from buffer.")
+
+        self._setup_image(image)
+        logger.info("Image loaded from buffer (%dx%d)",
+                    self.image.shape[1], self.image.shape[0])
+
+    def _setup_image(self, image: np.ndarray) -> None:
+        """Internal helper to set up detection state from an image array."""
+        self.image = image
         self.image_all_boxes = self.image.copy()
         self.image_top_box = self.image.copy()
 
@@ -111,9 +135,6 @@ class YOLODetector:
         self.centers = []
         self.mean_center = None
         self.best_box = None
-
-        logger.info("Image loaded: %s  (%dx%d)", image_path,
-                     self.image.shape[1], self.image.shape[0])
 
     # ------------------------------------------------------------------
     # Object Detection

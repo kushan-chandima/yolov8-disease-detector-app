@@ -55,13 +55,14 @@ If you already have the environment at `C:\python project\virtual_env\fyp_env`:
 | scipy | 1.15.2 | Scientific computing utilities |
 | pyserial | 3.5 | Serial communication with ESP32 |
 | tqdm | 4.67.1 | Progress bars during training |
+| streamlit | 1.55.0 | Web application interface |
 
 ## Verify Installation
 
 After installing, verify everything works:
 
 ```bash
-python -c "from ultralytics import YOLO; import cv2; import yaml; import serial; print('All imports OK')"
+python -c "from ultralytics import YOLO; import cv2; import yaml; import serial; import streamlit; print('All imports OK')"
 ```
 
 ## ESP32 / Arduino IDE Setup

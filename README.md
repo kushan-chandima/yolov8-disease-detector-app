@@ -43,6 +43,7 @@ Camera → YOLOv8 Detection → Quadrant Mapping → ESP32 (Serial) → Stepper 
 │   ├── detect.py                # Disease detection module
 │   └── train.py                 # Model training script
 ├── data/                        # Dataset images
+├── app.py                       # Streamlit web interface
 ├── requirements.txt             # Python dependencies
 ├── setup_env.md                 # Environment setup guide
 └── README.md
@@ -77,7 +78,15 @@ data/
 python scripts/train.py
 ```
 
-### 3. Run Detection
+### 4. Run Global Detection (Web UI)
+
+For a user-friendly interface with image upload and visualization:
+
+```bash
+streamlit run app.py
+```
+
+### 5. CLI Detection (Optional)
 
 Place your trained model weights (`best.pt`) in the `models/` directory, then:
 
@@ -111,6 +120,7 @@ All settings are centralized in [`config/config.yaml`](config/config.yaml):
 | Tool | Purpose |
 |------|---------|
 | Python 3.10.8 | Core programming language |
+| Streamlit | Web application interface |
 | Ultralytics YOLOv8 | Object detection framework |
 | OpenCV | Image processing |
 | PyTorch | Deep learning backend |
