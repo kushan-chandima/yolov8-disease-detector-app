@@ -1,6 +1,10 @@
-# 🌶️ YOLOv8 Chili Disease Detection & Control System
+# 🌶️ ChiliGuard AI: Precision Disease Detection
 
-A smart chili plant disease detection and targeted pesticide spraying system using **YOLOv8 object detection** and an **ESP32-controlled mini sprayer** to reduce chemical usage and improve crop health.
+<p align="center">
+  <img src="assets/logo.png" width="300" alt="ChiliGuard AI Logo">
+</p>
+
+A smart chili plant disease detection and targeted pesticide spraying system using **YOLOv8 object detection** and an **ESP32-controlled mini sprayer**.
 
 ## 📋 Overview
 
@@ -105,15 +109,18 @@ The script will prompt for an image path, run detection, display results, and se
 
 See [hardware/README.md](hardware/README.md) for wiring and component details.
 
+## 🖥️ User Interface (ChiliGuard AI Dashboard)
+
+The project features a premium, dark-themed Streamlit dashboard for real-time analysis:
+
+- **Analysis Dashboard**: Integrated glassmorphism, smooth gradients, and Inter typography.
+- **Tabbed Interface**: Organized into **Detection Analytics**, **Data Insights**, and **Documentation**.
+- **Real-time Metrics**: View infection counts and targeted spray zones instantly.
+- **Hardware Integration**: Toggle and test ESP32 serial communication directly from the sidebar.
+
+*(Screenshots of the dashboard and detection results can be added here)*
+
 ## ⚙️ Configuration
-
-All settings are centralized in [`config/config.yaml`](config/config.yaml):
-
-- **Model:** weights path, confidence threshold, image size
-- **Detection:** bounding box colors, quadrant boundaries
-- **Serial:** COM port, baud rate, timeouts
-- **Training:** epochs, image size, base model, output directories
-- **Dataset:** paths, class names, number of classes
 
 ## 🛠️ Software & Tools
 

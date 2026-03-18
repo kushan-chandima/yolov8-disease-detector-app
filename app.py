@@ -165,7 +165,7 @@ def main():
     with st.sidebar:
         if os.path.exists("assets/logo.png"):
             # Use columns to center logo or add padding
-            st.image("assets/logo.png", use_container_width=True)
+            st.image("assets/logo.png", width="stretch")
         else:
             st.title("🌶️ ChiliGuard AI")
             
@@ -206,7 +206,7 @@ def main():
                 
                 st.image(cv.cvtColor(detector.image, cv.COLOR_BGR2RGB), 
                          caption="Processed Input", 
-                         use_container_width=True)
+                         width="stretch")
                 
                 if st.button("✨ START AI SCAN"):
                     with st.spinner("Processing architectural layers..."):
@@ -220,7 +220,7 @@ def main():
             st.subheader("🎯 Neural Output")
             if "detected" in st.session_state and st.session_state["detected"]:
                 res_img = cv.cvtColor(detector.image_all_boxes, cv.COLOR_BGR2RGB)
-                st.image(res_img, caption="Object Detection Overlay", use_container_width=True)
+                st.image(res_img, caption="Object Detection Overlay", width="stretch")
                 
                 mc_col1, mc_col2 = st.columns(2)
                 mc_col1.metric("Infections Identified", st.session_state["num_detections"])
